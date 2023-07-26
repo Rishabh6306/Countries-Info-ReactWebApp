@@ -1,10 +1,13 @@
 import React from 'react';
-import Box from './Components/Box';
+import Heading from './Components/Heading';
+import Data from './Components/Data';
 
 function App() {
   return (
     <div>
-      <Box />
+      <div id="main-container" className='my-12'>
+      <Data/>
+    </div>
     </div>
   );
 }
