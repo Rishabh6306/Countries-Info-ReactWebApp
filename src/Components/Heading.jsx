@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Box from './Box';
 
-function Heading({ countryName, onInputChange, onSearch, countriesData }) {
-  const dataToRender = countriesData ?? [];
+function Heading({ countryData }) {
+  const [countryName, setCountryName] = useState('');
+  const [filteredCountries, setFilteredCountries] = useState([]);
+
+  useEffect(() => {
+    if (countryData) {
+      const filteredData = countryData.filter((country) =>
+        country.name.common.toLowerCase().includes(countryName.toLowerCase())
+      );
+      setFilteredCountries(filteredData);
+    }
+  }, [countryData, countryName]);
 
   return (
     <div>
@@ -10,18 +21,17 @@ function Heading({ countryName, onInputChange, onSearch, countriesData }) {
       </h1>
       <div className="flex justify-around text-white text-2xl">
         <input
-          className="p-4 mx-6 w-1/4 bg-customBlue border-2"
+          className="p-4 mx-2 w-2/4 bg-customBlue border-2"
           type="text"
           placeholder="Search Country Name..."
           value={countryName}
-          onChange={onInputChange}
+          onChange={(e) => setCountryName(e.target.value)}
         />
-        <button
-          className="p-4 mx-6 w-1/4 bg-customBlue border-2"
-          onClick={onSearch}
-        >
-          Search
-        </button>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {filteredCountries.map((country, index) => (
+          <Box key={index} data={country} />
+        ))}
       </div>
     </div>
   );

@@ -20,9 +20,9 @@ function Data() {
   }, []);
 
   return (
-    <div id="main-container" className="my-12">
+    <div id="main-container" className="my-3">
       <Heading countryData={countriesData} />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-20 ">
         {countriesData.map((country, index) => (
           <Box key={index} data={country} />
         ))}
@@ -30,5 +30,3 @@ function Data() {
     </div>
   );
 }
-
-export default Data;
