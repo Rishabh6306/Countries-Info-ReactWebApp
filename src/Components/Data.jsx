@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Card from './Box';
+import Box from './Box';
 import Heading from './Heading';
 
 function Data() {
@@ -21,7 +21,12 @@ function Data() {
 
   return (
     <div id="main-container" className="my-12">
-      <Heading countriesData={countriesData} />
+      <Heading countryData={countriesData} />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {countriesData.map((country, index) => (
+          <Box key={index} data={country} />
+        ))}
+      </div>
     </div>
   );
 }
