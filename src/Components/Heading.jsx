@@ -68,6 +68,8 @@
 // }
 
 // export default Heading;
+
+
 import React, { useState, useEffect } from 'react';
 import Box from './Box';
 
@@ -110,7 +112,11 @@ function Heading({ countryData }) {
           filteredData.sort((a, b) => b.name.common.localeCompare(a.name.common));
           break;
         case 'Language':
-          filteredData.sort((a, b) => a.languages[Object.keys(a.languages)[0]].localeCompare(b.languages[Object.keys(b.languages)[0]]));
+          filteredData.sort((a, b) => {
+            const langA = Object.values(a.languages)[0];
+            const langB = Object.values(b.languages)[0];
+            return langA && langB ? langA.localeCompare(langB) : 0;
+          });
           break;
         case 'Population':
           filteredData = filteredData.filter((country) => country.population > 100000);
@@ -152,8 +158,8 @@ function Heading({ countryData }) {
         </select>
         <select onChange={handleFilterChange} className='bg-customBlue'>
           <option value="">Additional Filters</option>
-          <option value="AtoZ">A to Z (Country Name)</option>
-          <option value="ZtoA">Z to A (Country Name)</option>
+          <option value="ZtoA">A to Z (Country Name)</option>
+          <option value="AtoZ">Z to A (Country Name)</option>
           <option value="Language">Language</option>
           <option value="Population">Population (greater than 100,000)</option>
         </select>
