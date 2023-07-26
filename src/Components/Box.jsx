@@ -9,7 +9,7 @@ function Box({ data }) {
   const { name, flags, currencies, capital, languages, population, region, area, maps, startOfWeek } = data;
 
   return (
-    <div className="max-w-sm rounded overflow-hidden border-2 shadow-lg border-white h-[900px]">
+    <div className="rounded overflow-hidden border-2 shadow-lg border-white">
       <img className="w-full h-60" src={flags.png} alt={flags.alt} />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{name.common}</div>
@@ -39,3 +39,4 @@ function Box({ data }) {
 }
 
 export default Box;
+

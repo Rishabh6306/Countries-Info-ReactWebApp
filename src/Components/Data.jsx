@@ -24,12 +24,14 @@ function Data() {
   return (
     <>
       <Heading countryData={countriesData} />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
+      {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mx-auto w-full"> */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mx-auto w-full">
         {countriesData.map((country, index) => (
           <Box key={index} data={country} />
         ))}
       </div>
-    </>
+      
+      </>
   );
 }
 

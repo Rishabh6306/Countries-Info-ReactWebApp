@@ -1,75 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import Box from './Box';
-
-// function Heading({ countryData }) {
-//   const [countryName, setCountryName] = useState('');
-//   const [filteredCountries, setFilteredCountries] = useState([]);
-//   const [regions, setRegions] = useState([]);
-//   const [selectedRegion, setSelectedRegion] = useState('');
-
-//   useEffect(() => {
-//     if (countryData) {
-//       const uniqueRegions = [...new Set(countryData.map((country) => country.region))];
-//       setRegions(uniqueRegions);
-//     }
-//   }, [countryData]);
-
-//   useEffect(() => {
-//     if (countryData) {
-//       let filteredData = countryData;
-
-//       // Filter by country name
-//       if (countryName) {
-//         filteredData = countryData.filter((country) =>
-//           country.name.common.toLowerCase().includes(countryName.toLowerCase())
-//         );
-//       }
-
-//       // Filter by region
-//       if (selectedRegion) {
-//         filteredData = filteredData.filter((country) => country.region === selectedRegion);
-//       }
-
-//       setFilteredCountries(filteredData);
-//     }
-//   }, [countryData, countryName, selectedRegion]);
-
-//   const handleRegionChange = (e) => {
-//     setSelectedRegion(e.target.value);
-//   };
-
-//   return (
-//     <>
-//       <h1 className="text-white text-4xl text-center my-10">Discover Country Details</h1>
-//       <div className="flex justify-around text-white text-2xl">
-//         <input
-//           className="p-4 mx-2 w-2/4 bg-customBlue border-2"
-//           type="text"
-//           placeholder="Search Country Name..."
-//           value={countryName}
-//           onChange={(e) => setCountryName(e.target.value)}
-//         />
-//         <select onChange={handleRegionChange}>
-//           <option value="">Filter by Region</option>
-//           {regions.map((region, index) => (
-//             <option key={index} value={region}>
-//               {region || 'Unknown'}
-//             </option>
-//           ))}
-//         </select>
-//       </div>
-//       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-12">
-//         {filteredCountries.map((country, index) => (
-//           <Box key={index} data={country} />
-//         ))}
-//       </div>
-//     </>
-//   );
-// }
-
-// export default Heading;
-
-
 import React, { useState, useEffect } from 'react';
 import Box from './Box';
 
@@ -139,7 +67,7 @@ function Heading({ countryData }) {
 
   return (
     <>
-      <h1 className="text-white text-4xl text-center my-10">Discover Country Details</h1>
+      <h1 className="text-white text-5xl text-center my-10">Discover Country Details</h1>
       <div className="flex justify-around text-white text-2xl">
         <input
           className="p-4 mx-2 w-2/4 bg-customBlue border-2"
