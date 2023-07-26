@@ -8,7 +8,9 @@ function Data() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://restcountries.com/v3.1/all?fields=name,flags,population');
+        const response = await fetch(
+          'https://restcountries.com/v3.1/all?fields=name,flags,population,capital,currencies,languages'
+        );
         const jsonData = await response.json();
         setCountriesData(jsonData);
       } catch (error) {
@@ -20,13 +22,15 @@ function Data() {
   }, []);
 
   return (
-    <div id="main-container" className="my-3">
+    <>
       <Heading countryData={countriesData} />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-20 ">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
         {countriesData.map((country, index) => (
           <Box key={index} data={country} />
         ))}
       </div>
-    </div>
+    </>
   );
 }
+
+export default Data;

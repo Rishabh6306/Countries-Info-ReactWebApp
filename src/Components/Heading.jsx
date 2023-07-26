@@ -15,7 +15,7 @@ function Heading({ countryData }) {
   }, [countryData, countryName]);
 
   return (
-    <div>
+    <>
       <h1 className="text-white text-4xl text-center my-10">
         Discover Country Details
       </h1>
@@ -27,13 +27,19 @@ function Heading({ countryData }) {
           value={countryName}
           onChange={(e) => setCountryName(e.target.value)}
         />
+        <select>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-12">
         {filteredCountries.map((country, index) => (
           <Box key={index} data={country} />
         ))}
       </div>
-    </div>
+    </>
   );
 }
 
