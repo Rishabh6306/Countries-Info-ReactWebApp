@@ -67,16 +67,16 @@ function Heading({ countryData }) {
 
   return (
     <>
-      <h1 className="text-white text-5xl text-center my-10">Discover Country Details</h1>
-      <div className="flex flex-wrap justify-around text-white text-2xl">
+      <h1 className="text-white sm:text-3xl text-5xl text-center my-10">Discover Country Details</h1>
+      <div className="flex flex-wrap justify-around text-white text-xl">
         <input
-          className="p-4 mx-2 w-2/4 bg-customBlue border-2"
+          className="p-4 mx-2 sm:w-56 md:w-2/4 bg-customBlue border-2"
           type="text"
           placeholder="Search Country Name..."
           value={countryName}
           onChange={(e) => setCountryName(e.target.value)}
         />
-        <select onChange={handleRegionChange} className='bg-customBlue'>
+        <select onChange={handleRegionChange} className='bg-customBlue my-4'>
           <option value="">Filter by Region</option>
           {regions.map((region, index) => (
             <option key={index} value={region}>
@@ -84,7 +84,7 @@ function Heading({ countryData }) {
             </option>
           ))}
         </select>
-        <select onChange={handleFilterChange} className='bg-customBlue'>
+        <select onChange={handleFilterChange} className='bg-customBlue mt-5'>
           <option value="">Additional Filters</option>
           <option value="ZtoA">A to Z (Country Name)</option>
           <option value="AtoZ">Z to A (Country Name)</option>
@@ -92,7 +92,7 @@ function Heading({ countryData }) {
           <option value="Population">Population (greater than 100,000)</option>
         </select>
       </div>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-5 lg:gap-7 my-12">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 md:gap-3 lg:gap-7 my-12">
         {filteredCountries.map((country, index) => (
           <Box key={index} data={country} />
         ))}
