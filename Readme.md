@@ -50,7 +50,7 @@ If you want to run CountryInfo Web on your local system, follow these simple ste
 Here are a few screenshots of CountryInfo Web App:
 
 ![Screenshot 1](./public/Screenshots1.png)
-![Screenshot 2](./public/Screenshots2.pngg)
+![Screenshot 2](./public/Screenshots2.png)
 
 ## Feedback and Contributions
 
