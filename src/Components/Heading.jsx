@@ -84,7 +84,7 @@ function Heading({ countryData }) {
             </option>
           ))}
         </select>
-        <select onChange={handleFilterChange} className='bg-customBlue mt-5'>
+        <select onChange={handleFilterChange} className='bg-customBlue mt-3 '>
           <option value="">Additional Filters</option>
           <option value="ZtoA">A to Z (Country Name)</option>
           <option value="AtoZ">Z to A (Country Name)</option>

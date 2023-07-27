@@ -20,7 +20,7 @@ function Box({ data }) {
         <p><strong>Area:</strong> {area} km²</p>
         <p><strong>Languages:</strong> {Object.values(languages).join(', ')}</p>
         {currencies && Object.keys(currencies).length > 0 && (
-          <p><strong>Currency:</strong> {Object.values(currencies)[0].name} ({Object.values(currencies)[0].symbol})</p>
+          <p><strong>Currency:</strong> {Object.values(currencies)[0].name} <span className='text-green-500'>({Object.values(currencies)[0].symbol})</span></p>
         )}
         {startOfWeek && (
           <p><strong>Start of Week:</strong> {startOfWeek}</p>
@@ -28,9 +28,9 @@ function Box({ data }) {
         {maps && (
           <p>
             <strong>Maps:</strong>
-            <a href={maps.googleMaps}>Google Maps</a>
+            <a className="text-blue-500 hover:underline " href={maps.googleMaps} target='_blank'>Google Maps</a>
             <span> | </span>
-            <a href={maps.openStreetMaps}>OpenStreetMaps</a>
+            <a className="text-blue-500 hover:underline " href={maps.openStreetMaps} target='_blank'>OpenStreetMaps</a>
           </p>
         )}
       </div>
