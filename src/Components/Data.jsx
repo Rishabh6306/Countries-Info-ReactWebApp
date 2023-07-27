@@ -25,7 +25,7 @@ function Data() {
     <>
       <Heading countryData={countriesData} />
       {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mx-auto w-full"> */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mx-auto w-full">
+      <div id="grid-container" className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-5 lg:gap-7 mx-auto" >
         {countriesData.map((country, index) => (
           <Box key={index} data={country} />
         ))}

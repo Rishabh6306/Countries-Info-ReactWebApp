@@ -68,7 +68,7 @@ function Heading({ countryData }) {
   return (
     <>
       <h1 className="text-white text-5xl text-center my-10">Discover Country Details</h1>
-      <div className="flex justify-around text-white text-2xl">
+      <div className="flex flex-wrap justify-around text-white text-2xl">
         <input
           className="p-4 mx-2 w-2/4 bg-customBlue border-2"
           type="text"
@@ -92,7 +92,7 @@ function Heading({ countryData }) {
           <option value="Population">Population (greater than 100,000)</option>
         </select>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-12">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-5 lg:gap-7 my-12">
         {filteredCountries.map((country, index) => (
           <Box key={index} data={country} />
         ))}
